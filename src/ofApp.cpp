@@ -22,6 +22,8 @@ void ofApp::setup(){
 		data.push_back(str); //push the string onto a vector of strings  
 	}
 	
+	//font.load("helvetica.ttf", 18); 
+	font.load("timesnew.ttf", 20);
 	startMillis = ofGetElapsedTimeMillis();
 	interval = 4000;
 	data_index = 0;	
@@ -50,14 +52,11 @@ void ofApp::draw(){
 	cam.end();
 
 	//display text one line at a time
-	ofDrawBitmapString(data[data_index], 100, ofGetHeight() - 100);
-
-	//(thought i could maybe use this to make the font bigger, but didnt get too far with it yet 
-	//need to include the right header files/ library, it seems to be used in openGL)
-	//for (int i = 0; data[data_index][i] != '\0'; i++) {
-	//	glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, data[data_index][i]);
-	//}
+	font.drawString(data[data_index], 100, ofGetHeight() - 100);
 	
+	// used this before but changing the fontsize was a pain
+	//ofDrawBitmapString(data[data_index], 100, ofGetHeight() - 100);
+
 	//update index to display next text line after interval has elapsed
 	currentMillis = ofGetElapsedTimeMillis();
 	if ((currentMillis - startMillis) > interval) {

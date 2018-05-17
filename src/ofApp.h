@@ -34,6 +34,8 @@ class ofApp : public ofBaseApp{
 		int data_index;
 		ofEasyCam cam;
 
+		ofTrueTypeFont font;
+
 		int xrot;
 		float yrot;
 		int zrot;
