@@ -22,7 +22,7 @@ void ofApp::setup(){
 		data.push_back(str); //push the string onto a vector of strings  
 	}
 	
-	//font.load("helvetica.ttf", 18); 
+	//font.load("helvetica.ttf", 18); //or any other font?
 	font.load("timesnew.ttf", 20);
 	startMillis = ofGetElapsedTimeMillis();
 	interval = 4000;
